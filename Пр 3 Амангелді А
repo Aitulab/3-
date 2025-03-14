@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstdlib>  // Для rand() и srand()
+#include <ctime>    // Для time()
+
+int main() {
+    std::srand(std::time(0));  // Инициализация генератора случайных чисел
+    int secretNumber = std::rand() % 100 + 1;  // Генерируем число от 1 до 100
+    int guess;
+    int attempts = 0;
+
+    std::cout << "Добро пожаловать в игру 'Угадай число'!\n";
+    std::cout << "загадал кароче число от 1 до 100. Попробуйте угадать его.\n";
+
+    do {
+        std::cout << "Введите число: ";
+        std::cin >> guess;
+        attempts++;
+
+        if (guess > secretNumber) {
+            std::cout << "Загаданное число меньше.\n";
+        } else if (guess < secretNumber) {
+            std::cout << "Загаданное число больше.\n";
+        } else {
+            std::cout << "Поздравляю! Вы угадали число " << secretNumber << " за " << attempts << " попыток!\n";
+        }
+    } while (guess != secretNumber);
+
+    return 0;
+}
