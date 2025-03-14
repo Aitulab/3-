@@ -1,2 +1,1 @@
-# 3-
-З практическая 
+![Uploading image.png…]()
